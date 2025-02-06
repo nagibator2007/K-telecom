@@ -1,16 +1,29 @@
 <?php get_header(); ?>
 
 <main id="content">
-  <?php if ( have_posts() ) : ?>
-    <?php while ( have_posts() ) : the_post(); ?>
-      <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-        <div class="entry-content">
-          <?php the_content(); ?>
-        </div>
-      </article>
-    <?php endwhile; ?>
-  <?php endif; ?>
+
+<?php if ( is_front_page() ) : ?>
+
+<section class="main__banner">
+  <div class="container">
+    <div class="banner__left">
+      <h2 class="banner__title">Экономия нервов и денег — интернет К-Телеком</h2>
+      <ul class="banner__list">
+        <li class="banner__list__items">5 тарифов для многоквартирных и 4 для частных домов</li>
+        <li class="banner__list__items">безлимит подключенных устройств</li>
+        <li class="banner__list__items">комфортная поддержка 24/7</li>
+      </ul>
+      <a href="#" class="link_">Подробнее</a>
+    </div>
+    <div class="banner-right">
+      
+    </div>
+  </div>
+</section>
+
+<?php endif; ?>
+
 </main>
 
+<?php get_sidebar(); ?>  <?php //Можно убрать, если не нужен сайдбар на лендинге ?>
 <?php get_footer(); ?>
